@@ -1,1 +1,1 @@
-# javascript
+# Vanilla Javascript
