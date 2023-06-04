@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock, Paper, Scissor</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app-refactor.js" defer></script>
+  </head>
+  <body>
+    <h1>Rock Paper Scissor Game</h1>
+
+    <div class="points-container">
+      <h2 id="player-points">player points : 0</h2>
+      <h2 id="computer-points">computer points : 0</h2>
+    </div>
+
+    <button id="restart" class="btn">Restart Game</button>
+
+    <h2 class="option">Choose your option :</h2>
+
+    <div class="container">
+      <div class="card" id="rock">
+        <img src="img/rock.png" alt="rock-image" />
+        <h2>Rock</h2>
+      </div>
+      <div class="card" id="paper">
+        <img src="img/paper.png" alt="paper-image" />
+        <h2>Paper</h2>
+      </div>
+      <div class="card" id="scissor">
+        <img src="img/scissor.png" alt="scissor-image" />
+        <h2>Scissor</h2>
+      </div>
+    </div>
+
+    <div class="result-container">
+      <div class="result-card"></div>
+    </div>
+  </body>
+</html>
