@@ -3,6 +3,7 @@ const countryContainer = document.getElementById("country-container");
 const searchBar = document.getElementById("search-bar");
 
 searchBtn.addEventListener("click", (e) => {
+  if(e.target.classList[0] === "cta-button"){
   countryContainer.innerHTML = "";
   const continent = e.target.innerText;
   const xhr = new XMLHttpRequest();
@@ -31,6 +32,7 @@ searchBtn.addEventListener("click", (e) => {
     }
   };
   xhr.send();
+  }
 });
 
 countryContainer.addEventListener("click", (e) => {
