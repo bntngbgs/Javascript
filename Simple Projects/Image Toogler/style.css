@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: auto;
+  width: 80%;
+}
+
+.container {
+  display: flex;
+  /* height: 100vh; */
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  margin-top: 4rem;
+}
+
+#image-container {
+  height: 426px;
+}
+
+#image-container img {
+  border-radius: 20px;
+}
+
+.button-container {
+  margin-top: 4rem;
+}
+
+.btn {
+  font-size: large;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.btn-ocean {
+  background-color: #007f9d;
+}
+
+.btn-forest {
+  background-color: #11998e;
+}
+
+.btn-city {
+  background-color: #8e9eab;
+}
