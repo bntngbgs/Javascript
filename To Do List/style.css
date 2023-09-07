@@ -1,0 +1,324 @@
+/* =========
+   VARIABLES
+   ========= */
+:root {
+  --primary-color: #816797;
+  --primary-tint: #d3bbe9;
+  --secondary-color: #d6d5a8;
+  --accent-color: #ffb84c;
+  --dark-color: #1b2430;
+  --light-color: #fefefe;
+}
+
+/* =========
+   CSS RESET
+   ========= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  margin: 0;
+  font-family: 'IBM Plex Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* ===============
+   UTILITY CLASSES
+   =============== */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ======
+   HEADER
+   ====== */
+header {
+  background-color: var(--primary-color);
+  padding: 4rem;
+}
+
+header h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: var(--dark-color);
+}
+
+/* =========
+   Todo Form
+   ========= */
+
+.todo-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.todo-form button {
+  padding: 0.75rem 1.25rem;
+  font-size: 1.25rem;
+  border-radius: 8px;
+  border: 0;
+  background-color: var(--accent-color);
+  cursor: pointer;
+}
+input[type='text'] {
+  padding: 0.75rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 8px;
+  border: 0;
+  width: 75%;
+  margin-right: 1.15rem;
+}
+
+/* ====
+   MAIN
+   ==== */
+main {
+  background-color: var(--secondary-color);
+  padding-block: 3rem;
+  min-height: calc(100vh - 262px);
+}
+
+.main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* =============
+   Todos Counter
+   ============= */
+
+.todo-counter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: var(--light-color);
+  gap: 1rem;
+  position: absolute;
+  left: 12%;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background-color: var(--dark-color);
+  border-radius: 8px;
+}
+
+.counter span {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+/* ==========
+   Todo Lists
+   ========== */
+
+.todo-list {
+  padding-inline: 1rem;
+}
+
+.todos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--light-color);
+  padding: 1rem 0.75rem 1rem 1.5rem;
+  border-radius: 8px;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+input[type='checkbox'] {
+  appearance: none;
+  background-color: transparent;
+  margin: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid var(--accent-color);
+  border-radius: 100%;
+  display: grid;
+  place-content: center;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+input[type='checkbox']::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' style='fill: rgba(255, 255, 255, 1);transform: ;msFilter:;'%3E%3Cpath d='m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z'%3E%3C/path%3E%3C/svg%3E");
+  transform: scale(0);
+  transition: all 0.2s ease-in-out;
+}
+
+input[type='checkbox']:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+input[type='checkbox']:checked::before {
+  transform: scale(1);
+}
+
+.todos img {
+  width: 24px;
+  cursor: pointer;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.todos.complete {
+  background-color: var(--primary-tint);
+  text-decoration: line-through;
+}
+
+/* =============
+   MEDIA QUERIES
+   ============= */
+
+/* Todo counter absolute positioning */
+@media (max-width: 1100px) {
+  .todo-counter {
+    position: static;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 636px;
+    padding-left: 1rem;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  header {
+    padding-block: 3.25rem;
+    padding-inline: 1rem;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  .header {
+    width: 100%;
+  }
+
+  main {
+    padding-block: 2rem;
+  }
+
+  .todo-form button {
+    font-size: 1.15rem;
+    margin-top: 1rem;
+  }
+
+  input[type='text'] {
+    font-size: 1.15rem;
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 375px) {
+  header {
+    padding: 1rem 0 2rem 0;
+  }
+
+  header h1 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .todo-form {
+    padding-inline: 1rem;
+  }
+
+  .todo-form button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin-top: 0.75rem;
+    width: 100%;
+  }
+
+  input[type='text'] {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  main {
+    min-height: calc(100vh - 198px);
+  }
+
+  .todo-counter {
+    font-size: 0.8rem;
+  }
+
+  .todo-list {
+    font-size: 0.8rem;
+  }
+
+  input[type='checkbox'] {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  input[type='checkbox']::before {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 20 20' style='fill: rgba(255, 255, 255, 1);transform: ;msFilter:;'%3E%3Cpath d='m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z'%3E%3C/path%3E%3C/svg%3E");
+  }
+
+  .todos {
+    padding: 1rem 0.75rem 1rem 1rem;
+  }
+
+  .todos img {
+    width: 20px;
+  }
+}
