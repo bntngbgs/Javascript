@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Rubik:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>My Bookshelf</title>
+  </head>
+  <body>
+    <header>
+      <div class="container header">
+        <img src="assets/logo.png" alt="" />
+        <h1>My Bookshelf</h1>
+      </div>
+    </header>
+
+    <main>
+      <div class="container add-books">
+        <div class="form-container">
+          <h1>Add new book</h1>
+          <form action="#" class="form-control">
+            <label for="title"
+              ><p>Title</p>
+              <input
+                type="text"
+                name="title"
+                id="title"
+                placeholder="e.g Harry Potter"
+                required
+              />
+            </label>
+
+            <label for="author"
+              ><p>Author</p>
+              <input
+                type="text"
+                name="author"
+                id="author"
+                placeholder="e.g J.K. Rowling"
+                required
+              />
+            </label>
+
+            <label for="year"
+              ><p>Year</p>
+              <input
+                type="number"
+                name="year"
+                id="year"
+                placeholder="e.g 1997"
+                min="1900"
+                max="2023"
+              />
+            </label>
+
+            <label for="is-completed" class="custom-checkbox">
+              <input type="checkbox" name="is-complete" id="is-complete" />
+              Read Complete
+            </label>
+
+            <button type="submit">Add book to shelf</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="container search-books">
+        <div class="search-container">
+          <h1>Search Books</h1>
+          <form action="#" class="search-form">
+            <label for="search-book"> Title </label>
+
+            <input
+              type="text"
+              name="search-book"
+              id="search-book"
+              placeholder="Search books..."
+            />
+            <button type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="container uncompleted-books">
+        <div class="uncompleted-books-container">
+          <h2>Uncompleted Books Shelf</h2>
+          <div class="uncompleted-books-list">
+            <p>No books added.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container completed-books">
+        <div class="completed-books-container">
+          <h2>Completed Books Shelf</h2>
+          <div class="completed-books-list">
+            <p>No books added.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
